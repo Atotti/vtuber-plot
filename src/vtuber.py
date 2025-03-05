@@ -82,6 +82,16 @@ def save_vtubers(vtubers: List[VTuber], save_path: str):
     print(f"✅ Saved VTuber list {save_path}!")
 
 
+def filter_vtubers(vtubers: List[VTuber], subscribers: int = 100_000) -> List[VTuber]:
+    filtered_vtubers: List[VTuber] = []
+    for v in vtubers:
+        if v.subscribers >= subscribers:
+            filtered_vtubers.append(v)
+    print(f"🦖 Filterd to {len(filtered_vtubers)}!")
+    return filtered_vtubers
+
+
 if __name__=="__main__":
     all_vtubers = get_all_vtubers()
-    save_vtubers(all_vtubers, "data/vtubers.json")
+    filtered_vtubers = filter_vtubers(all_vtubers)
+    save_vtubers(filtered_vtubers, "data/filtered_vtubers.json")
