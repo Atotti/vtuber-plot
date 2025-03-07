@@ -5,6 +5,8 @@ import dataclasses
 import time
 import json
 
+from prompt import gen_prompt
+
 BASE_URL = "https://www.vstats.jp/brands/"
 
 @dataclasses.dataclass
@@ -12,6 +14,8 @@ class VTuber:
     name: str
     subscribers: int
     brand_id: int
+    research_prompt: str
+
 
 def get_brand_vtuber_list(brand_id: int) -> List[VTuber]:
     brand_url = f"{BASE_URL}{brand_id}"
@@ -52,13 +56,15 @@ def get_brand_vtuber_list(brand_id: int) -> List[VTuber]:
         vtubers.append(VTuber(
             name=name,
             subscribers=subscribers,
-            brand_id=brand_id
+            brand_id=brand_id,
+            research_prompt=gen_prompt(name)
         ))
 
     if len(vtubers) == 0:
         raise Exception("⚠️ No data!")
 
     return vtubers
+
 
 def get_all_vtubers() -> List[VTuber]:
     vtubers: List[VTuber] = []
@@ -74,6 +80,7 @@ def get_all_vtubers() -> List[VTuber]:
 
     return vtubers
 
+
 def save_vtubers(vtubers: List[VTuber], save_path: str):
     data = [dataclasses.asdict(v) for v in vtubers]
     with open(save_path, 'w', encoding='utf-8') as f:
@@ -82,16 +89,27 @@ def save_vtubers(vtubers: List[VTuber], save_path: str):
     print(f"✅ Saved VTuber list {save_path}!")
 
 
-def filter_vtubers(vtubers: List[VTuber], subscribers: int = 100_000) -> List[VTuber]:
+def filter_vtubers_by_subscribers(vtubers: List[VTuber], subscribers: int = 250000) -> List[VTuber]:
     filtered_vtubers: List[VTuber] = []
     for v in vtubers:
         if v.subscribers >= subscribers:
             filtered_vtubers.append(v)
-    print(f"🦖 Filterd to {len(filtered_vtubers)}!")
+    print(f"🦖 Filterd to {len(filtered_vtubers)} by subscribers!")
+    return filtered_vtubers
+
+
+def filter_vtubers_by_brand_ids(vtubers: List[VTuber], brand_ids: List[int]) -> List[VTuber]:
+    filtered_vtubers: List[VTuber] = []
+    for v in vtubers:
+        if v.brand_id in brand_ids:
+            filtered_vtubers.append(v)
+    print(f"🦖 Filterd to {len(filtered_vtubers)} by brand_ids!")
     return filtered_vtubers
 
 
 if __name__=="__main__":
     all_vtubers = get_all_vtubers()
-    filtered_vtubers = filter_vtubers(all_vtubers)
+    filtered_vtubers = filter_vtubers_by_subscribers(all_vtubers)
+    target_brand_ids = [1, 7, 2, 20, 162, 31, 92, 3, 89, 17, 18, 57]
+    filtered_vtubers = filter_vtubers_by_brand_ids(filtered_vtubers, target_brand_ids)
     save_vtubers(filtered_vtubers, "data/filtered_vtubers.json")
