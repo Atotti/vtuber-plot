@@ -5,9 +5,10 @@ import dataclasses
 import time
 import json
 
-from prompt import gen_prompt
+from src.prompt import gen_prompt
 
 BASE_URL = "https://www.vstats.jp/brands/"
+
 
 @dataclasses.dataclass
 class VTuber:
@@ -32,15 +33,17 @@ def get_brand_vtuber_list(brand_id: int) -> List[VTuber]:
             if i < max_retries - 1:
                 time.sleep(delay_seconds)
     else:
-        raise Exception(f"Failed to retrieve data from {brand_url} after {max_retries} attempts.")
+        raise Exception(
+            f"Failed to retrieve data from {brand_url} after {max_retries} attempts."
+        )
 
-    soup = BeautifulSoup(response.text, 'html.parser')
+    soup = BeautifulSoup(response.text, "html.parser")
     vtubers: List[VTuber] = []
-    vtuber_elements = soup.find_all('div', class_='col')
+    vtuber_elements = soup.find_all("div", class_="col")
 
     for vtuber_element in vtuber_elements:
         # リンク要素を取得
-        a_tag = vtuber_element.find('a', class_='stretched-link link-success')
+        a_tag = vtuber_element.find("a", class_="stretched-link link-success")
         if not a_tag:
             continue
 
@@ -48,17 +51,19 @@ def get_brand_vtuber_list(brand_id: int) -> List[VTuber]:
         name = a_tag.get_text(strip=True)
 
         # 登録者数取得
-        subscribers_div = vtuber_element.find_all('div', class_='fs-5')[-1]
+        subscribers_div = vtuber_element.find_all("div", class_="fs-5")[-1]
         subscribers_str = subscribers_div.get_text(strip=True)
         subscribers = int(subscribers_str.replace(",", ""))
 
         # データクラスにまとめてリストに追加
-        vtubers.append(VTuber(
-            name=name,
-            subscribers=subscribers,
-            brand_id=brand_id,
-            research_prompt=gen_prompt(name)
-        ))
+        vtubers.append(
+            VTuber(
+                name=name,
+                subscribers=subscribers,
+                brand_id=brand_id,
+                research_prompt=gen_prompt(name),
+            )
+        )
 
     if len(vtubers) == 0:
         raise Exception("⚠️ No data!")
@@ -83,13 +88,15 @@ def get_all_vtubers() -> List[VTuber]:
 
 def save_vtubers(vtubers: List[VTuber], save_path: str):
     data = [dataclasses.asdict(v) for v in vtubers]
-    with open(save_path, 'w', encoding='utf-8') as f:
+    with open(save_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
 
     print(f"✅ Saved VTuber list {save_path}!")
 
 
-def filter_vtubers_by_subscribers(vtubers: List[VTuber], subscribers: int = 250000) -> List[VTuber]:
+def filter_vtubers_by_subscribers(
+    vtubers: List[VTuber], subscribers: int = 250000
+) -> List[VTuber]:
     filtered_vtubers: List[VTuber] = []
     for v in vtubers:
         if v.subscribers >= subscribers:
@@ -98,7 +105,9 @@ def filter_vtubers_by_subscribers(vtubers: List[VTuber], subscribers: int = 2500
     return filtered_vtubers
 
 
-def filter_vtubers_by_brand_ids(vtubers: List[VTuber], brand_ids: List[int]) -> List[VTuber]:
+def filter_vtubers_by_brand_ids(
+    vtubers: List[VTuber], brand_ids: List[int]
+) -> List[VTuber]:
     filtered_vtubers: List[VTuber] = []
     for v in vtubers:
         if v.brand_id in brand_ids:
@@ -108,13 +117,13 @@ def filter_vtubers_by_brand_ids(vtubers: List[VTuber], brand_ids: List[int]) -> 
 
 
 def load_vtubers(load_path: str) -> List[VTuber]:
-    with open(load_path, 'r', encoding='utf-8') as f:
+    with open(load_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
     return [VTuber(**item) for item in data]
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     all_vtubers = get_all_vtubers()
     filtered_vtubers = filter_vtubers_by_subscribers(all_vtubers)
     target_brand_ids = [1, 7, 2, 20, 162, 31, 92, 3, 89, 17, 18, 57]
