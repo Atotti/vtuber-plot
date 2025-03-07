@@ -12,52 +12,10 @@
         "research_prompt": "しぐれういというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
     },
     {
-        "name": "PARRA",
-        "subscribers": 1950000,
-        "brand_id": 1,
-        "research_prompt": "PARRAというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
-    },
-    {
-        "name": "Hetto",
-        "subscribers": 1830000,
-        "brand_id": 1,
-        "research_prompt": "HettoというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
-    },
-    {
-        "name": "Gibpuri Ch",
-        "subscribers": 1770000,
-        "brand_id": 1,
-        "research_prompt": "Gibpuri ChというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
-    },
-    {
-        "name": "Shoto",
-        "subscribers": 1610000,
-        "brand_id": 1,
-        "research_prompt": "ShotoというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
-    },
-    {
-        "name": "Rakun",
-        "subscribers": 1440000,
-        "brand_id": 1,
-        "research_prompt": "RakunというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
-    },
-    {
-        "name": "Chessi",
-        "subscribers": 1440000,
-        "brand_id": 1,
-        "research_prompt": "ChessiというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
-    },
-    {
         "name": "Kanaria",
         "subscribers": 1340000,
         "brand_id": 1,
         "research_prompt": "KanariaというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
-    },
-    {
-        "name": "Srta Catana",
-        "subscribers": 1040000,
-        "brand_id": 1,
-        "research_prompt": "Srta CatanaというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
     },
     {
         "name": "河崎 翆 ch / Kawasaki Sui ch.",
@@ -72,46 +30,16 @@
         "research_prompt": "Sakuna Ch. 結城さくなというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
     },
     {
-        "name": "Mythia Batford",
-        "subscribers": 1000000,
-        "brand_id": 1,
-        "research_prompt": "Mythia BatfordというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
-    },
-    {
         "name": "Nito Ch. 新兎わい",
         "subscribers": 983000,
         "brand_id": 1,
         "research_prompt": "Nito Ch. 新兎わいというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
     },
     {
-        "name": "Bao The Whale",
-        "subscribers": 939000,
-        "brand_id": 1,
-        "research_prompt": "Bao The WhaleというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
-    },
-    {
-        "name": "Rin Penrose Ch. and Snebby",
-        "subscribers": 858000,
-        "brand_id": 1,
-        "research_prompt": "Rin Penrose Ch. and SnebbyというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
-    },
-    {
         "name": "Patra Channel / 周防パトラ",
         "subscribers": 851000,
         "brand_id": 1,
         "research_prompt": "Patra Channel / 周防パトラというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
-    },
-    {
-        "name": "Dokibird",
-        "subscribers": 824000,
-        "brand_id": 1,
-        "research_prompt": "DokibirdというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
-    },
-    {
-        "name": "KendoMurft",
-        "subscribers": 758000,
-        "brand_id": 1,
-        "research_prompt": "KendoMurftというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
     },
     {
         "name": "桜ころみん coromin Ch",
@@ -198,12 +126,6 @@
         "research_prompt": "メイカちゃんねるというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
     },
     {
-        "name": "MaWang 마왕",
-        "subscribers": 503000,
-        "brand_id": 1,
-        "research_prompt": "MaWang 마왕というVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
-    },
-    {
         "name": "伊東ライフ",
         "subscribers": 501000,
         "brand_id": 1,
@@ -228,12 +150,6 @@
         "research_prompt": "懲役太郎チャンネルというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
     },
     {
-        "name": "Trickywi",
-        "subscribers": 493000,
-        "brand_id": 1,
-        "research_prompt": "TrickywiというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
-    },
-    {
         "name": "七海うらら*歌channel",
         "subscribers": 477000,
         "brand_id": 1,
@@ -244,12 +160,6 @@
         "subscribers": 471000,
         "brand_id": 1,
         "research_prompt": "ピーナッツくん!オシャレになりたい!というVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
-    },
-    {
-        "name": "NongHanging (น้องห้ะหงิง)",
-        "subscribers": 468000,
-        "brand_id": 1,
-        "research_prompt": "NongHanging (น้องห้ะหงิง)というVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
     },
     {
         "name": "かみと-KamitoChannel-",
@@ -360,12 +270,6 @@
         "research_prompt": "天羽しろっぷ 【Amau Syrup】というVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
     },
     {
-        "name": "Emikukis",
-        "subscribers": 381000,
-        "brand_id": 1,
-        "research_prompt": "EmikukisというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
-    },
-    {
         "name": "Kiichan Ch. 狐井アキラ",
         "subscribers": 374000,
         "brand_id": 1,
@@ -384,12 +288,6 @@
         "research_prompt": "璐洛洛 Ruroro【人造人Vtuber】というVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
     },
     {
-        "name": "HØRI 07 - Virtual7『TH』",
-        "subscribers": 360000,
-        "brand_id": 1,
-        "research_prompt": "HØRI 07 - Virtual7『TH』というVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
-    },
-    {
         "name": "Akuma Nihmune Ch",
         "subscribers": 356000,
         "brand_id": 1,
@@ -400,12 +298,6 @@
         "subscribers": 351000,
         "brand_id": 1,
         "research_prompt": "神楽めあ / KaguraMeaというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
-    },
-    {
-        "name": "【SUB】96NEKO-CHANNEL",
-        "subscribers": 344000,
-        "brand_id": 1,
-        "research_prompt": "【SUB】96NEKO-CHANNELというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
     },
     {
         "name": "きつねさん / Kitune-san",
@@ -456,18 +348,6 @@
         "research_prompt": "焼まゆるのお絵かきちゃんねるというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
     },
     {
-        "name": "DELUTAYA Δ.",
-        "subscribers": 306000,
-        "brand_id": 1,
-        "research_prompt": "DELUTAYA Δ.というVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
-    },
-    {
-        "name": "Meica05 Ch.",
-        "subscribers": 279000,
-        "brand_id": 1,
-        "research_prompt": "Meica05 Ch.というVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
-    },
-    {
         "name": "麻酔 Masui",
         "subscribers": 278000,
         "brand_id": 1,
@@ -478,12 +358,6 @@
         "subscribers": 274000,
         "brand_id": 1,
         "research_prompt": "Rakkun RというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
-    },
-    {
-        "name": "춤추는샤나DancingShana",
-        "subscribers": 274000,
-        "brand_id": 1,
-        "research_prompt": "춤추는샤나DancingShanaというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
     },
     {
         "name": "ズズちゃんねる!!!",
@@ -502,18 +376,6 @@
         "subscribers": 256000,
         "brand_id": 1,
         "research_prompt": "雲母ミミl KiraraMimiというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
-    },
-    {
-        "name": "girl_dm_",
-        "subscribers": 252000,
-        "brand_id": 1,
-        "research_prompt": "girl_dm_というVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
-    },
-    {
-        "name": "MerryMa 메리마",
-        "subscribers": 252000,
-        "brand_id": 1,
-        "research_prompt": "MerryMa 메리마というVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
     },
     {
         "name": "鳩羽つぐ",

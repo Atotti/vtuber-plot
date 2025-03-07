@@ -107,6 +107,13 @@ def filter_vtubers_by_brand_ids(vtubers: List[VTuber], brand_ids: List[int]) -> 
     return filtered_vtubers
 
 
+def load_vtubers(load_path: str) -> List[VTuber]:
+    with open(load_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    return [VTuber(**item) for item in data]
+
+
 if __name__=="__main__":
     all_vtubers = get_all_vtubers()
     filtered_vtubers = filter_vtubers_by_subscribers(all_vtubers)
