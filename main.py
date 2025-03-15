@@ -59,3 +59,7 @@ def collect_vtuber_info_from_gpt_search():
 
         utils.save_markdown(response, f"data/SearchGPT/{name}.md")
         print(f"✅ End research for {name} and Saved!")
+
+
+if __name__=="__main__":
+    collect_vtuber_info_from_gpt_search()

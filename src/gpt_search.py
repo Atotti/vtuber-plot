@@ -17,8 +17,8 @@ class SearchGPT():
                     "approximate": {
                         "country": "JP",
                     },
-                "search_context_size": "high",
                 },
+                "search_context_size": "high",
             },
             messages=[
                 {
