@@ -3,8 +3,10 @@ import numpy as np
 from typing import List
 from src import vtuber, utils
 
+
 def calc_embeddings():
     from sentence_transformers import SentenceTransformer
+
     model = SentenceTransformer("retrieva-jp/amber-large")
 
     vtubers_json_path = "data/filtered_vtubers.json"
@@ -17,7 +19,7 @@ def calc_embeddings():
 
     for v in vtubers_data:
         name = utils.sanitize_path(v.name)
-        save_path = f"data/sarashina_embedding/{name}.npy"
+        save_path = f"data/modernbert_ja_310m/{name}.npy"
         if os.path.exists(save_path):
             print(f"⚠️  Embedding file already exists: {save_path}. Skipping.")
             continue

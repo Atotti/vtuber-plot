@@ -25,27 +25,31 @@ brand_id_dict = {
     31: "Kizuna AI",
     57: "深層組",
     53: "Crazy Raccoon",
-    127: "REJECT"
+    127: "REJECT",
 }
 
 # カスタムカラーマッピング
 color_map = {
     "個人": "gray",
-    "ホロライブ": px.colors.qualitative.Plotly[0],
-    "ホロスターズ": px.colors.qualitative.Plotly[1],
-    "ぶいすぽ": px.colors.qualitative.Plotly[2],
-    "エイレーン": px.colors.qualitative.Plotly[3],
-    "のりプロ": px.colors.qualitative.Plotly[4],
-    "あおぎり高校": px.colors.qualitative.Plotly[5],
-    "ななしいんく": px.colors.qualitative.Plotly[6],
-    "ネオポルテ": px.colors.qualitative.Plotly[7],
-    "にじさんじ": px.colors.qualitative.Plotly[8],
-    "Kizuna AI": px.colors.qualitative.Plotly[9],
+    "ホロライブ": "#ff80bf",
+    "ホロスターズ": "#1e90ff",
+    "ぶいすぽ": "#ff4500",
+    "エイレーン": "#00ced1",
+    "のりプロ": "#32cd32",
+    "あおぎり高校": "#000080",
+    "ななしいんく": "#ffd700",
+    "ネオポルテ": "#8a2be2",
+    "にじさんじ": "#800080",
+    "Kizuna AI": "#ff1493",
+    "深層組": "#191970",
+    "Crazy Raccoon": "#ff8c00",
+    "REJECT": "#696969",
 }
+
 
 def plot_embeddings_with_pca(
     embedding_dir="data/sarashina_embedding",
-    vtubers_json_path="data/filtered_vtubers.json"
+    vtubers_json_path="data/filtered_vtubers.json",
 ):
     embedding_model = embedding_dir.split("/")[-1]
 
@@ -82,12 +86,14 @@ def plot_embeddings_with_pca(
     X_2d = pca.fit_transform(X)
 
     # 5. 可視化用 DataFrame の作成
-    df = pd.DataFrame({
-        "name": names,
-        "brand_id": brands,
-        "x": X_2d[:, 0],
-        "y": X_2d[:, 1],
-    })
+    df = pd.DataFrame(
+        {
+            "name": names,
+            "brand_id": brands,
+            "x": X_2d[:, 0],
+            "y": X_2d[:, 1],
+        }
+    )
 
     # 6. Seaborn の設定（日本語表示のために IPAexGothic を指定）
     plt.figure(figsize=(10, 8), dpi=500)
@@ -99,11 +105,11 @@ def plot_embeddings_with_pca(
         x="x",
         y="y",
         hue="brand_id",
-        palette=color_map,    # カスタムカラーマッピングを利用
+        palette=color_map,  # カスタムカラーマッピングを利用
         s=50,
         alpha=0.8,
         edgecolor="none",
-        legend="full"         # 凡例を表示
+        legend="full",  # 凡例を表示
     )
 
     plt.title(f"VTuber プロット ({embedding_model})")
@@ -116,12 +122,8 @@ def plot_embeddings_with_pca(
         if row["name"] in text_label:
             texts.append(plt.text(row["x"], row["y"], row["name"], fontsize=8))
 
-    adjust_text(
-        texts,
-        arrowprops=dict(arrowstyle="-", color="gray", lw=0.5)
-    )
+    adjust_text(texts, arrowprops=dict(arrowstyle="-", color="gray", lw=0.5))
 
     plt.tight_layout()
     plt.savefig(f"plot-{embedding_model}.png")
     plt.savefig(f"plot-{embedding_model}.pdf")
-

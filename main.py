@@ -5,6 +5,7 @@ from src import vtuber, utils, gpt_search, search_pixiv_dic, plot, plot_plotly
 
 from src.embedding import sarashina_embedding, modernbert_ja_310m
 
+
 def collect_vtuber_info_from_pixiv_dic():
     vtubers_json_path = "data/filtered_vtubers.json"
     vtubers = vtuber.load_vtubers(vtubers_json_path)
@@ -61,7 +62,7 @@ def collect_vtuber_info_from_gpt_search():
         print(f"✅ End research for {name} and Saved!")
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     # === vtubers.json を生成 ===
     # all_vtubers = vtuber.get_all_vtubers()
     # filtered_vtubers = vtuber.filter_vtubers_by_subscribers(all_vtubers)
@@ -75,7 +76,7 @@ if __name__=="__main__":
 
     # sarashina_embedding.calc_embeddings()
 
-    modernbert_ja_310m.calc_embeddings()
+    # modernbert_ja_310m.calc_embeddings()
 
     # plot.plot_embeddings_with_pca(embedding_dir="data/sarashina_embedding")
     # plot_plotly.plot_embeddings_interactive(embedding_dir="data/sarashina_embedding")
