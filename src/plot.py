@@ -62,7 +62,7 @@ def plot_embeddings_with_pca(
         # ブランドIDがなければ "Unknown" とする
         brand = v.brand_id if v.brand_id else "Unknown"
         name_to_brand[sanitized_name] = brand
-        if v.subscribers > 10_00_000:
+        if v.subscribers > 1_000_000:
             text_label.add(sanitized_name)
 
     # 2. 埋め込みファイルの読み込み
@@ -96,7 +96,7 @@ def plot_embeddings_with_pca(
     )
 
     # 6. Seaborn の設定（日本語表示のために IPAexGothic を指定）
-    plt.figure(figsize=(10, 8), dpi=500)
+    plt.figure(figsize=(10, 8), dpi=800)
     sns.set_theme(style="ticks", context="notebook", font="IPAexGothic")
 
     # 7. 散布図作成
@@ -106,7 +106,7 @@ def plot_embeddings_with_pca(
         y="y",
         hue="brand_id",
         palette=color_map,  # カスタムカラーマッピングを利用
-        s=50,
+        s=80,
         alpha=0.8,
         edgecolor="none",
         legend="full",  # 凡例を表示
@@ -116,11 +116,18 @@ def plot_embeddings_with_pca(
     plt.xlabel("PC1")
     plt.ylabel("PC2")
 
+    plt.legend(
+        title="ブランド",
+        bbox_to_anchor=(1.05, 1),  # 右側の外に配置
+        loc="upper left",  # 左上寄せ
+        borderaxespad=0,
+    )
+
     # 8. テキストラベルを配置（重なり防止のため adjustText を使用）
     texts = []
     for i, row in df.iterrows():
         if row["name"] in text_label:
-            texts.append(plt.text(row["x"], row["y"], row["name"], fontsize=8))
+            texts.append(plt.text(row["x"], row["y"], row["name"], fontsize=12))
 
     adjust_text(texts, arrowprops=dict(arrowstyle="-", color="gray", lw=0.5))
 
