@@ -1,7 +1,7 @@
 import traceback
 import os
 
-from src import vtuber, utils, gpt_search, search_pixiv_dic, plot
+from src import vtuber, utils, gpt_search, search_pixiv_dic, plot, plot_plotly
 
 from src.embedding import sarashina_embedding, modernbert_ja_310m
 
@@ -66,4 +66,5 @@ if __name__=="__main__":
     # collect_vtuber_info_from_gpt_search()
     # sarashina_embedding.calc_embeddings()
     # modernbert_ja_310m.calc_embeddings()
-    plot.plot_embeddings_with_pca()
+    # plot.plot_embeddings_with_pca()
+    plot_plotly.plot_embeddings_interactive()

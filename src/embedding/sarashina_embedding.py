@@ -1,4 +1,3 @@
-from sentence_transformers import SentenceTransformer
 import numpy as np
 from typing import List
 
@@ -6,6 +5,7 @@ from src import vtuber, utils
 
 
 def calc_embeddings():
+    from sentence_transformers import SentenceTransformer
     model = SentenceTransformer("sbintuitions/sarashina-embedding-v1-1b")
 
     vtubers_json_path = "data/filtered_vtubers.json"
