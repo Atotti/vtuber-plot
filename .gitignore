@@ -8,6 +8,10 @@ wheels/
 
 # Virtual environments
 .venv
+.gpu-venv
 
 # credintails
 .env
+
+# cache
+.cache

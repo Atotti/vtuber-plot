@@ -1,9 +1,9 @@
 import traceback
 import os
 
-from src import search_pixiv_dic
-from src import vtuber, utils, gpt_search
+from src import vtuber, utils, gpt_search, search_pixiv_dic
 
+from src.embedding import sarashina_embedding, modernbert_ja_310m
 
 def collect_vtuber_info_from_pixiv_dic():
     vtubers_json_path = "data/filtered_vtubers.json"
@@ -62,4 +62,7 @@ def collect_vtuber_info_from_gpt_search():
 
 
 if __name__=="__main__":
-    collect_vtuber_info_from_gpt_search()
+    # collect_vtuber_info_from_pixiv_dic
+    # collect_vtuber_info_from_gpt_search()
+    # sarashina_embedding.calc_embeddings()
+    modernbert_ja_310m.calc_embeddings()

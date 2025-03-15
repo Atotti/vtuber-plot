@@ -28,10 +28,14 @@ RUN apt-get -y update && apt-get -y upgrade && \
 
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 RUN uv python install $PYTHON_VERSION
-ENV HF_HUB_CACHE /app/.cache/huggingface
+ENV HF_HUB_CACHE /nfs/.cache/huggingface
 
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
 ENV PATH /root/.cargo/bin:$PATH
 
+ENV VIRTUAL_ENV /nfs/.gpu-venv
+ENV UV_VIRTUAL_ENV /nfs/.gpu-venv
+ENV UV_PROJECT_ENVIRONMENT /nfs/.gpu-venv
 
-CMD ["bash"]
+
+CMD ["sleep", "infinity"]
