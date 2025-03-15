@@ -22,7 +22,7 @@ def get_brand_vtuber_list(brand_id: int) -> List[VTuber]:
     brand_url = f"{BASE_URL}{brand_id}"
 
     max_retries = 5
-    delay_seconds = 1
+    delay_seconds = 0.1
 
     for i in range(max_retries):
         response = requests.get(brand_url)
@@ -95,7 +95,7 @@ def save_vtubers(vtubers: List[VTuber], save_path: str):
 
 
 def filter_vtubers_by_subscribers(
-    vtubers: List[VTuber], subscribers: int = 250000
+    vtubers: List[VTuber], subscribers: int = 30_000
 ) -> List[VTuber]:
     filtered_vtubers: List[VTuber] = []
     for v in vtubers:

@@ -16,7 +16,10 @@ brand_id_dict = {
     89: "ななしいんく",
     162: "ネオポルテ",
     7: "にじさんじ",
-    31: "Kizuna AI"
+    31: "Kizuna AI",
+    57: "深層組",
+    53: "Crazy Raccoon",
+    127: "REJECT"
 }
 
 def plot_embeddings_interactive(

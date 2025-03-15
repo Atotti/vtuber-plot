@@ -1,8 +1,7 @@
+import os
 import numpy as np
 from typing import List
-
 from src import vtuber, utils
-
 
 def calc_embeddings():
     from sentence_transformers import SentenceTransformer
@@ -18,6 +17,11 @@ def calc_embeddings():
 
     for v in vtubers_data:
         name = utils.sanitize_path(v.name)
+        save_path = f"data/sarashina_embedding/{name}.npy"
+        if os.path.exists(save_path):
+            print(f"⚠️  Embedding file already exists: {save_path}. Skipping.")
+            continue
+
         md_path = f"data/SearchGPT/{name}.md"
         try:
             with open(md_path, "r", encoding="utf-8") as f:
@@ -29,8 +33,11 @@ def calc_embeddings():
         names.append(name)
         sentences.append(content)
 
-    print("🫠 Start calculating embeddings...")
+    if not sentences:
+        print("No new embeddings to calculate. Exiting.")
+        return
 
+    print("🫠 Start calculating embeddings...")
     embedding_vectors = model.encode(sentences, convert_to_numpy=True, batch_size=2)
 
     for name, embedding_vector in zip(names, embedding_vectors):
