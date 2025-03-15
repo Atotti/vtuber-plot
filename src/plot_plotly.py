@@ -26,6 +26,7 @@ def plot_embeddings_interactive(
     embedding_dir="data/sarashina_embedding",
     vtubers_json_path="data/filtered_vtubers.json"
 ):
+    embedding_model = embedding_dir.split("/")[-1]
     # 1. VTuber一覧を読み込んで、名前(正規化済) -> ブランドID の辞書を作成
     vtubers_data = vtuber.load_vtubers(vtubers_json_path)
     name_to_brand = {}
@@ -85,11 +86,11 @@ def plot_embeddings_interactive(
         color_discrete_map=color_map,
         hover_name="name",  # ホバー時に名前だけ表示
         hover_data={},      # その他の情報は非表示
-        title="VTuber プロット (sarashina-embedding)"
+        title=f"VTuber プロット ({embedding_model})"
     )
 
     # 点のサイズを大きくする（例として15に設定）
     fig.update_traces(marker=dict(size=15))
 
     # HTMLファイルとして保存（Webに埋め込む際などに利用）
-    fig.write_html("plot-sarashina-embedding.html")
+    fig.write_html(f"plot-{embedding_model}.html")

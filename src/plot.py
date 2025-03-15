@@ -47,6 +47,7 @@ def plot_embeddings_with_pca(
     embedding_dir="data/sarashina_embedding",
     vtubers_json_path="data/filtered_vtubers.json"
 ):
+    embedding_model = embedding_dir.split("/")[-1]
 
     # 1. VTuber一覧を読み込んで、名前（正規化済）→ ブランドID の辞書を作成
     vtubers_data = vtuber.load_vtubers(vtubers_json_path)
@@ -105,7 +106,7 @@ def plot_embeddings_with_pca(
         legend="full"         # 凡例を表示
     )
 
-    plt.title("VTuber プロット (sarashina embedding)")
+    plt.title(f"VTuber プロット ({embedding_model})")
     plt.xlabel("PC1")
     plt.ylabel("PC2")
 
@@ -121,6 +122,6 @@ def plot_embeddings_with_pca(
     )
 
     plt.tight_layout()
-    plt.savefig("plot-sarashina-embedding.png")
-    plt.savefig("plot-sarashina-embedding.pdf")
+    plt.savefig(f"plot-{embedding_model}.png")
+    plt.savefig(f"plot-{embedding_model}.pdf")
 

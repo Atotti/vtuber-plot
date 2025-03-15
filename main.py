@@ -71,12 +71,15 @@ if __name__=="__main__":
 
     # collect_vtuber_info_from_pixiv_dic
 
-    collect_vtuber_info_from_gpt_search()
+    # collect_vtuber_info_from_gpt_search()
 
     # sarashina_embedding.calc_embeddings()
 
-    # modernbert_ja_310m.calc_embeddings()
+    modernbert_ja_310m.calc_embeddings()
 
-    # plot.plot_embeddings_with_pca()
-    # plot_plotly.plot_embeddings_interactive()
+    # plot.plot_embeddings_with_pca(embedding_dir="data/sarashina_embedding")
+    # plot_plotly.plot_embeddings_interactive(embedding_dir="data/sarashina_embedding")
+
+    # plot.plot_embeddings_with_pca(embedding_dir="data/modernbert_ja_310m")
+    # plot_plotly.plot_embeddings_interactive(embedding_dir="data/modernbert_ja_310m")
     pass
