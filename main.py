@@ -63,15 +63,15 @@ def collect_vtuber_info_from_gpt_search():
 
 if __name__=="__main__":
     # === vtubers.json を生成 ===
-    all_vtubers = vtuber.get_all_vtubers()
-    filtered_vtubers = vtuber.filter_vtubers_by_subscribers(all_vtubers)
-    target_brand_ids = [1, 7, 2, 20, 162, 31, 92, 3, 89, 17, 18, 57, 53, 127]
-    filtered_vtubers = vtuber.filter_vtubers_by_brand_ids(filtered_vtubers, target_brand_ids)
-    vtuber.save_vtubers(filtered_vtubers, "data/filtered_vtubers.json")
+    # all_vtubers = vtuber.get_all_vtubers()
+    # filtered_vtubers = vtuber.filter_vtubers_by_subscribers(all_vtubers)
+    # target_brand_ids = [1, 7, 2, 20, 162, 31, 92, 3, 89, 17, 18, 57, 53, 127, 114]
+    # filtered_vtubers = vtuber.filter_vtubers_by_brand_ids(filtered_vtubers, target_brand_ids)
+    # vtuber.save_vtubers(filtered_vtubers, "data/filtered_vtubers.json")
 
     # collect_vtuber_info_from_pixiv_dic
 
-    # collect_vtuber_info_from_gpt_search()
+    collect_vtuber_info_from_gpt_search()
 
     # sarashina_embedding.calc_embeddings()
 
