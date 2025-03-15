@@ -3,7 +3,7 @@ import time
 from bs4 import BeautifulSoup
 
 
-def deep_research(name: str, prompt: str) -> str:
+def search(name: str, prompt: str) -> str:
     BASE_URL = "https://dic.pixiv.net/"
     search_url = BASE_URL + "search?query=" + name
 

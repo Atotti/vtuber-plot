@@ -1,0 +1,17 @@
+services:
+  gpu-service:
+    container_name: gpu-service
+    image: atotti/gpu-service:latest
+    working_dir: /app
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - .:/app
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
