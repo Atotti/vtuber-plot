@@ -79,16 +79,16 @@ def plot_embeddings_interactive(
         {
             "name": names,
             "brand_id": brands,
-            "PC1": X_2d[:, HORIZONTAL_AXIS-1],
-            "PC2": X_2d[:, VERTICAL_AXIS-1],
+            f"PC{str(HORIZONTAL_AXIS)}": X_2d[:, HORIZONTAL_AXIS-1],
+            f"PC{str(VERTICAL_AXIS)}": X_2d[:, VERTICAL_AXIS-1],
         }
     )
 
     # 5. Plotly Expressでインタラクティブな散布図を作成
     fig = px.scatter(
         df,
-        x="PC1",
-        y="PC2",
+        x=f"PC{str(HORIZONTAL_AXIS)}",
+        y=f"PC{str(VERTICAL_AXIS)}",
         color="brand_id",
         color_discrete_map=color_map,
         hover_name="name",  # ホバー時に名前だけ表示
@@ -101,3 +101,5 @@ def plot_embeddings_interactive(
 
     # HTMLファイルとして保存（Webに埋め込む際などに利用）
     fig.write_html(f"plot-{embedding_model}.html")
+    fig.write_html(f"plot-{embedding_model}-{str(HORIZONTAL_AXIS)}-{str(VERTICAL_AXIS)}.html")
+

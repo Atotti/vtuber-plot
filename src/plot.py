@@ -114,8 +114,8 @@ def plot_embeddings_with_pca(
     )
 
     plt.title(f"VTuber プロット ({embedding_model})")
-    plt.xlabel("PC1")
-    plt.ylabel("PC2")
+    plt.xlabel(f"PC{str(HORIZONTAL_AXIS)}")
+    plt.ylabel(f"PC{str(VERTICAL_AXIS)}")
 
     plt.legend(
         title="ブランド",
@@ -133,5 +133,5 @@ def plot_embeddings_with_pca(
     adjust_text(texts, arrowprops=dict(arrowstyle="-", color="gray", lw=0.5))
 
     plt.tight_layout()
-    plt.savefig(f"plot-{embedding_model}.png")
-    plt.savefig(f"plot-{embedding_model}.pdf")
+    plt.savefig(f"plot-{embedding_model}-{str(HORIZONTAL_AXIS)}-{str(VERTICAL_AXIS)}.png")
+    plt.savefig(f"plot-{embedding_model}-{str(HORIZONTAL_AXIS)}-{str(VERTICAL_AXIS)}.pdf")
