@@ -96,7 +96,7 @@ def plot_embeddings_with_pca(
     )
 
     # 6. Seaborn の設定（日本語表示のために IPAexGothic を指定）
-    plt.figure(figsize=(10, 8), dpi=800)
+    plt.figure(figsize=(16, 10), dpi=800)
     sns.set_theme(style="ticks", context="notebook", font="IPAexGothic")
 
     # 7. 散布図作成

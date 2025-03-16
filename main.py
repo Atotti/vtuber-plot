@@ -3,7 +3,7 @@ import os
 
 from src import vtuber, utils, gpt_search, search_pixiv_dic, plot, plot_plotly
 
-from src.embedding import sarashina_embedding, modernbert_ja_310m
+from src.embedding import sarashina_embedding, modernbert_ja_310m, openai_embedding_3_large
 
 
 def collect_vtuber_info_from_pixiv_dic():
@@ -78,9 +78,15 @@ if __name__ == "__main__":
 
     # modernbert_ja_310m.calc_embeddings()
 
-    plot.plot_embeddings_with_pca(embedding_dir="data/sarashina_embedding")
+    # openai_embedding_3_large.calc_embeddings()
+
+    # plot.plot_embeddings_with_pca(embedding_dir="data/sarashina_embedding")
     # plot_plotly.plot_embeddings_interactive(embedding_dir="data/sarashina_embedding")
 
-    plot.plot_embeddings_with_pca(embedding_dir="data/modernbert_ja_310m")
+    # plot.plot_embeddings_with_pca(embedding_dir="data/modernbert_ja_310m")
     # plot_plotly.plot_embeddings_interactive(embedding_dir="data/modernbert_ja_310m")
+
+    plot.plot_embeddings_with_pca(embedding_dir="data/text-embedding-3-large")
+    plot_plotly.plot_embeddings_interactive(embedding_dir="data/text-embedding-3-large")
+
     pass
