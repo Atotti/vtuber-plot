@@ -246,12 +246,6 @@
         "research_prompt": "EmiKotoneというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
     },
     {
-        "name": "DeluCat迪鹿",
-        "subscribers": 396000,
-        "brand_id": 1,
-        "research_prompt": "DeluCat迪鹿というVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
-    },
-    {
         "name": "ディープブリザード",
         "subscribers": 395000,
         "brand_id": 1,
@@ -286,12 +280,6 @@
         "subscribers": 369000,
         "brand_id": 1,
         "research_prompt": "KarmaというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
-    },
-    {
-        "name": "HØRI 07 - Virtual7『TH』",
-        "subscribers": 360000,
-        "brand_id": 1,
-        "research_prompt": "HØRI 07 - Virtual7『TH』というVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
     },
     {
         "name": "Akuma Nihmune Ch",
@@ -1842,12 +1830,6 @@
         "research_prompt": "Derem Kado  - にじさんじ / NIJISANJIというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
     },
     {
-        "name": "ハリ / Ryu Hari 【にじさんじ】",
-        "subscribers": 37400,
-        "brand_id": 7,
-        "research_prompt": "ハリ / Ryu Hari 【にじさんじ】というVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
-    },
-    {
         "name": "黛 灰 / Kai Mayuzumi【にじさんじ】",
         "subscribers": 704000,
         "brand_id": 7,
@@ -1942,12 +1924,6 @@
         "subscribers": 269000,
         "brand_id": 17,
         "research_prompt": "瀬兎一也/SetoKazuyaというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
-    },
-    {
-        "name": "字ぴろぱる / AZANA PIROPARU",
-        "subscribers": 201000,
-        "brand_id": 17,
-        "research_prompt": "字ぴろぱる / AZANA PIROPARUというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
     },
     {
         "name": "稲荷いろはInari Iroha",
@@ -2458,12 +2434,6 @@
         "subscribers": 891000,
         "brand_id": 162,
         "research_prompt": "渋谷ハルというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
-    },
-    {
-        "name": "緋月ゆい / Hizuki Yui",
-        "subscribers": 373000,
-        "brand_id": 162,
-        "research_prompt": "緋月ゆい / Hizuki YuiというVTuberについて以下の点に重視して詳細に調査し長文で解説してください。\n- キャラクター性\n- 活動内容\n- コラボ履歴\n- 人間関係\n- コンテンツのジャンル\n- 活動スタイル\n- 他のVTuberと比較した時の特徴\n"
     },
     {
         "name": "白雪レイドーReid Channelー",
