@@ -5,6 +5,9 @@ import plotly.express as px
 from sklearn.decomposition import PCA
 from src import vtuber, utils
 
+HORIZONTAL_AXIS = 1
+VERTICAL_AXIS = 3
+
 brand_id_dict = {
     1: "個人",
     2: "ホロライブ",
@@ -68,7 +71,7 @@ def plot_embeddings_interactive(
 
     # 3. PCAで2次元に圧縮
     X = np.vstack(embeddings)
-    pca = PCA(n_components=2)
+    pca = PCA(n_components=max(VERTICAL_AXIS, HORIZONTAL_AXIS))
     X_2d = pca.fit_transform(X)
 
     # 4. DataFrame作成
@@ -76,8 +79,8 @@ def plot_embeddings_interactive(
         {
             "name": names,
             "brand_id": brands,
-            "PC1": X_2d[:, 0],
-            "PC2": X_2d[:, 1],
+            "PC1": X_2d[:, HORIZONTAL_AXIS-1],
+            "PC2": X_2d[:, VERTICAL_AXIS-1],
         }
     )
 

@@ -5,10 +5,11 @@ import seaborn as sns
 from sklearn.decomposition import PCA
 from adjustText import adjust_text
 import pandas as pd
-import plotly.express as px
 import japanize_matplotlib
-
 from src import vtuber, utils
+
+HORIZONTAL_AXIS = 1
+VERTICAL_AXIS = 3
 
 # brand_id_dict を使ってブランド名を定義
 brand_id_dict = {
@@ -82,7 +83,7 @@ def plot_embeddings_with_pca(
     X = np.vstack(embeddings)
 
     # 4. PCAで2次元に圧縮
-    pca = PCA(n_components=2)
+    pca = PCA(n_components=max(VERTICAL_AXIS, HORIZONTAL_AXIS))
     X_2d = pca.fit_transform(X)
 
     # 5. 可視化用 DataFrame の作成
@@ -90,8 +91,8 @@ def plot_embeddings_with_pca(
         {
             "name": names,
             "brand_id": brands,
-            "x": X_2d[:, 0],
-            "y": X_2d[:, 1],
+            "x": X_2d[:, HORIZONTAL_AXIS-1],
+            "y": X_2d[:, VERTICAL_AXIS-1],
         }
     )
 
