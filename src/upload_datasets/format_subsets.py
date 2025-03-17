@@ -27,10 +27,10 @@ brand_id_dict = {
 # ======= ファイル名に利用できない文字などを除去するユーティリティ関数 =======
 def sanitize_path(text: str) -> str:
     """にじさんじという文字を空白に置換し、ファイル名として使えない文字も除去"""
-    sanitized = re.sub(r"にじさんじ", " ", text)
-    sanitized = re.sub(r'[\\/:\*\?"<>|\-【】]', " ", sanitized)
-    sanitized = re.sub(r"\s{2,}", " ", sanitized)
-    return sanitized.strip()
+    text = re.sub(r"にじさんじ", " ", text)
+    text = re.sub(r'[\\/:\*\?"<>|\-【】]', " ", text)
+    text = re.sub(r"\s{2,}", " ", text)
+    return text.strip()
 
 
 # ======= filtered_vtubers.json の読み込み =======
@@ -40,7 +40,7 @@ def load_vtubers(json_path: str):
     return data
 
 
-# ======= Markdown から各セクションをパースする関数 =======
+# ======= Markdownから各セクションをパースする関数 =======
 def parse_markdown_sections(md_content: str) -> dict:
     """
     md_content 内にある以下のセクションを抜き出す:
@@ -65,8 +65,8 @@ def parse_markdown_sections(md_content: str) -> dict:
     }
 
     for section_title in sections.keys():
-        # 見出しは「**キャラクター性**」のようにマークダウンで囲まれている想定
-        # 次の見出しもしくはファイル終端までを対象とする正規表現を使用
+        # "**キャラクター性**" といったマークダウン見出しから
+        # 次の見出し or ファイル終端 までを正規表現で抜き出す
         pattern = rf"\*\*{section_title}\*\*\s*\n([\s\S]*?)(?=\n\*\*|$)"
         match = re.search(pattern, md_content)
         if match:
@@ -75,9 +75,30 @@ def parse_markdown_sections(md_content: str) -> dict:
     return sections
 
 
+def remove_markdown_links(text: str) -> str:
+    """
+    Markdownリンク記法を削除する。
+    例: [テキスト](URL) や ([テキスト](URL)) といったパターンを削除
+
+    - パターン1: \(\[[^\]]+\]\([^)]*\)\)
+      -> ([text](link)) のように丸括弧で囲まれているリンク
+    - パターン2: \[[^\]]+\]\([^)]*\)
+      -> [text](link) の基本的なMarkdownリンク
+    """
+    # 1. 丸括弧ごと ([text](link)) を削除
+    text = re.sub(r"\(\[[^\]]+\]\([^)]*\)\)", "", text)
+
+    # 2. 通常の [text](link) だけを削除
+    text = re.sub(r"\[[^\]]+\]\([^)]*\)", "", text)
+
+    # 連続した空白が生じた場合などを整形
+    text = re.sub(r"\s{2,}", " ", text).strip()
+    return text
+
+
 def main():
     parser = argparse.ArgumentParser(
-        description="MarkdownファイルからVTuber情報をパースし、各セクションごとにDatasetのサブセットを作成してHugging Face Hubへアップロードするスクリプト"
+        description="MarkdownファイルからVTuber情報をパースし、リンクを除去した上で各セクションごとにDatasetのサブセットを作成してHugging Face Hubへアップロードするスクリプト"
     )
     parser.add_argument(
         "--json",
@@ -147,12 +168,13 @@ def main():
                 md_content = f.read()
             parsed_sections = parse_markdown_sections(md_content)
 
-            # 各セクションを追記
+            # パースしたテキストからMarkdownリンクを除去
             for section_title, text in parsed_sections.items():
+                cleaned_text = remove_markdown_links(text)
                 sections_dict[section_title]["name"].append(name)
                 sections_dict[section_title]["brand"].append(brand_name)
                 sections_dict[section_title]["subscribers"].append(sub)
-                sections_dict[section_title]["text"].append(text)
+                sections_dict[section_title]["text"].append(cleaned_text)
 
         except Exception as e:
             traceback.print_exc()

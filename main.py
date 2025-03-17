@@ -70,7 +70,7 @@ if __name__ == "__main__":
     # filtered_vtubers = vtuber.filter_vtubers_by_brand_ids(filtered_vtubers, target_brand_ids)
     # vtuber.save_vtubers(filtered_vtubers, "data/filtered_vtubers.json")
 
-    # collect_vtuber_info_from_pixiv_dic
+    # collect_vtuber_info_from_pixiv_dic()
 
     # collect_vtuber_info_from_gpt_search()
 
