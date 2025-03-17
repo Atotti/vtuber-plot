@@ -74,19 +74,19 @@ if __name__ == "__main__":
 
     # collect_vtuber_info_from_gpt_search()
 
-    # sarashina_embedding.calc_embeddings()
+    sarashina_embedding.calc_embeddings(dataset_name="Atotti/VTuber-overview-split", split="キャラクター性")
 
     # modernbert_ja_310m.calc_embeddings()
 
     # openai_embedding_3_large.calc_embeddings()
 
-    plot.plot_embeddings_with_pca(embedding_dir="data/sarashina_embedding")
-    plot_plotly.plot_embeddings_interactive(embedding_dir="data/sarashina_embedding")
+    # plot.plot_embeddings_with_pca(embedding_dir="data/sarashina_embedding")
+    # plot_plotly.plot_embeddings_interactive(embedding_dir="data/sarashina_embedding")
 
-    plot.plot_embeddings_with_pca(embedding_dir="data/modernbert_ja_310m")
-    plot_plotly.plot_embeddings_interactive(embedding_dir="data/modernbert_ja_310m")
+    # plot.plot_embeddings_with_pca(embedding_dir="data/modernbert_ja_310m")
+    # plot_plotly.plot_embeddings_interactive(embedding_dir="data/modernbert_ja_310m")
 
-    plot.plot_embeddings_with_pca(embedding_dir="data/text-embedding-3-large")
-    plot_plotly.plot_embeddings_interactive(embedding_dir="data/text-embedding-3-large")
+    # plot.plot_embeddings_with_pca(embedding_dir="data/text-embedding-3-large")
+    # plot_plotly.plot_embeddings_interactive(embedding_dir="data/text-embedding-3-large")
 
     pass
