@@ -8,7 +8,7 @@ import pandas as pd
 import japanize_matplotlib
 from src import vtuber, utils
 
-HORIZONTAL_AXIS = 1
+HORIZONTAL_AXIS = 3
 VERTICAL_AXIS = 3
 
 # brand_id_dict を使ってブランド名を定義

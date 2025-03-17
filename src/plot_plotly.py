@@ -5,7 +5,7 @@ import plotly.express as px
 from sklearn.decomposition import PCA
 from src import vtuber, utils
 
-HORIZONTAL_AXIS = 1
+HORIZONTAL_AXIS = 2
 VERTICAL_AXIS = 3
 
 brand_id_dict = {
