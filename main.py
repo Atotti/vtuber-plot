@@ -61,6 +61,21 @@ def collect_vtuber_info_from_gpt_search():
         utils.save_markdown(response, f"data/SearchGPT/{name}.md")
         print(f"✅ End research for {name} and Saved!")
 
+def vtuber_plot(
+        embedding_dir="data/キャラクター性/sarashina_embedding",
+        HORIZONTAL_AXIS=1,
+        VERTICAL_AXIS=2
+    ):
+    plot.plot_embeddings_with_pca(
+        embedding_dir=embedding_dir,
+        HORIZONTAL_AXIS=HORIZONTAL_AXIS,
+        VERTICAL_AXIS=VERTICAL_AXIS
+        )
+    plot_plotly.plot_embeddings_interactive(
+        embedding_dir=embedding_dir,
+        HORIZONTAL_AXIS=HORIZONTAL_AXIS,
+        VERTICAL_AXIS=VERTICAL_AXIS
+        )
 
 if __name__ == "__main__":
     # === vtubers.json を生成 ===
@@ -74,19 +89,57 @@ if __name__ == "__main__":
 
     # collect_vtuber_info_from_gpt_search()
 
-    sarashina_embedding.calc_embeddings(dataset_name="Atotti/VTuber-overview-split", split="キャラクター性")
+    # sarashina_embedding.calc_embeddings(dataset_name="Atotti/VTuber-overview-split", split="キャラクター性")
+    # sarashina_embedding.calc_embeddings(dataset_name="Atotti/VTuber-overview-split", split="活動内容")
+    # sarashina_embedding.calc_embeddings(dataset_name="Atotti/VTuber-overview-split", split="コラボ履歴")
+    # sarashina_embedding.calc_embeddings(dataset_name="Atotti/VTuber-overview-split", split="人間関係")
+    # sarashina_embedding.calc_embeddings(dataset_name="Atotti/VTuber-overview-split", split="コンテンツのジャンル")
+    # sarashina_embedding.calc_embeddings(dataset_name="Atotti/VTuber-overview-split", split="活動スタイル")
+    # sarashina_embedding.calc_embeddings(dataset_name="Atotti/VTuber-overview-split", split="他のVTuberと比較した時の特徴")
+
+
+    vtuber_plot(
+        embedding_dir="data/キャラクター性/sarashina_embedding",
+        HORIZONTAL_AXIS=1,
+        VERTICAL_AXIS=2
+        )
+    vtuber_plot(
+        embedding_dir="data/活動内容/sarashina_embedding",
+        HORIZONTAL_AXIS=1,
+        VERTICAL_AXIS=2
+        )
+    vtuber_plot(
+        embedding_dir="data/コラボ履歴/sarashina_embedding",
+        HORIZONTAL_AXIS=1,
+        VERTICAL_AXIS=2
+        )
+    vtuber_plot(
+        embedding_dir="data/人間関係/sarashina_embedding",
+        HORIZONTAL_AXIS=1,
+        VERTICAL_AXIS=2
+        )
+    vtuber_plot(
+        embedding_dir="data/コンテンツのジャンル/sarashina_embedding",
+        HORIZONTAL_AXIS=1,
+        VERTICAL_AXIS=2
+        )
+    vtuber_plot(
+        embedding_dir="data/活動スタイル/sarashina_embedding",
+        HORIZONTAL_AXIS=1,
+        VERTICAL_AXIS=2
+        )
+    vtuber_plot(
+        embedding_dir="data/他のVTuberと比較した時の特徴/sarashina_embedding",
+        HORIZONTAL_AXIS=1,
+        VERTICAL_AXIS=2
+        )
 
     # modernbert_ja_310m.calc_embeddings()
 
     # openai_embedding_3_large.calc_embeddings()
 
-    # plot.plot_embeddings_with_pca(embedding_dir="data/sarashina_embedding")
-    # plot_plotly.plot_embeddings_interactive(embedding_dir="data/sarashina_embedding")
+    # vtuber_plot(embedding_dir="data/modernbert_ja_310m")
 
-    # plot.plot_embeddings_with_pca(embedding_dir="data/modernbert_ja_310m")
-    # plot_plotly.plot_embeddings_interactive(embedding_dir="data/modernbert_ja_310m")
-
-    # plot.plot_embeddings_with_pca(embedding_dir="data/text-embedding-3-large")
-    # plot_plotly.plot_embeddings_interactive(embedding_dir="data/text-embedding-3-large")
+    # vtuber_plot(embedding_dir="data/text-embedding-3-large")
 
     pass

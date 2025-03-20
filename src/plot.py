@@ -8,7 +8,7 @@ import pandas as pd
 import japanize_matplotlib
 from src import vtuber, utils
 
-HORIZONTAL_AXIS = 3
+HORIZONTAL_AXIS = 2
 VERTICAL_AXIS = 3
 
 # brand_id_dict を使ってブランド名を定義
@@ -51,8 +51,10 @@ color_map = {
 def plot_embeddings_with_pca(
     embedding_dir="data/sarashina_embedding",
     vtubers_json_path="data/filtered_vtubers.json",
+    HORIZONTAL_AXIS=HORIZONTAL_AXIS,
+    VERTICAL_AXIS=VERTICAL_AXIS
 ):
-    embedding_model = embedding_dir.split("/")[-1]
+    embedding_model = "/".join(embedding_dir.split("/")[1:])
 
     # 1. VTuber一覧を読み込んで、名前（正規化済）→ ブランドID の辞書を作成
     vtubers_data = vtuber.load_vtubers(vtubers_json_path)
@@ -133,5 +135,6 @@ def plot_embeddings_with_pca(
     adjust_text(texts, arrowprops=dict(arrowstyle="-", color="gray", lw=0.5))
 
     plt.tight_layout()
-    plt.savefig(f"plot-{embedding_model}-{str(HORIZONTAL_AXIS)}-{str(VERTICAL_AXIS)}.png")
-    plt.savefig(f"plot-{embedding_model}-{str(HORIZONTAL_AXIS)}-{str(VERTICAL_AXIS)}.pdf")
+    os.makedirs(f"works/{embedding_model}/", exist_ok=True)
+    plt.savefig(f"works/{embedding_model}/{str(HORIZONTAL_AXIS)}-{str(VERTICAL_AXIS)}.png")
+    plt.savefig(f"works/{embedding_model}/{str(HORIZONTAL_AXIS)}-{str(VERTICAL_AXIS)}.pdf")

@@ -26,14 +26,14 @@ def calc_embeddings(dataset_name:str = "Atotti/VTuber-overview", split:str = "tr
 
     md_map = {}
     for row in dataset:
-        md_map[row["name"]] = row["markdown"]
+        md_map[utils.sanitize_path(row["name"])] = row["markdown"]
 
     names: List[str] = []
     sentences: List[str] = []
 
     for v in vtubers_data:
         name = utils.sanitize_path(v.name)
-        save_path = f"data/sarashina_embedding/{name}.npy"
+        save_path = f"data/{split}/sarashina_embedding/{name}.npy"
         if os.path.exists(save_path):
             print(f"⚠️  Embedding file already exists: {save_path}. Skipping.")
             continue
@@ -54,7 +54,7 @@ def calc_embeddings(dataset_name:str = "Atotti/VTuber-overview", split:str = "tr
     embedding_vectors = model.encode(sentences, convert_to_numpy=True, batch_size=2)
 
     for name, embedding_vector in zip(names, embedding_vectors):
-        save_path = f"data/sarashina_embedding/{split}/{name}.npy"
+        save_path = f"data/{split}/sarashina_embedding/{name}.npy"
         os.makedirs(os.path.dirname(save_path), exist_ok=True)
         np.save(save_path, embedding_vector)
         print(f"👌 Saved {save_path}")

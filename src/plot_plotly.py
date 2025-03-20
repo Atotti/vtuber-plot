@@ -46,8 +46,10 @@ color_map = {
 def plot_embeddings_interactive(
     embedding_dir="data/sarashina_embedding",
     vtubers_json_path="data/filtered_vtubers.json",
+    HORIZONTAL_AXIS=HORIZONTAL_AXIS,
+    VERTICAL_AXIS=VERTICAL_AXIS
 ):
-    embedding_model = embedding_dir.split("/")[-1]
+    embedding_model = "/".join(embedding_dir.split("/")[1:])
     # 1. VTuber一覧を読み込んで、名前(正規化済) -> ブランドID の辞書を作成
     vtubers_data = vtuber.load_vtubers(vtubers_json_path)
     name_to_brand = {}
@@ -99,7 +101,7 @@ def plot_embeddings_interactive(
     # 点のサイズを大きくする（例として15に設定）
     fig.update_traces(marker=dict(size=15))
 
-    # HTMLファイルとして保存（Webに埋め込む際などに利用）
-    fig.write_html(f"plot-{embedding_model}.html")
-    fig.write_html(f"plot-{embedding_model}-{str(HORIZONTAL_AXIS)}-{str(VERTICAL_AXIS)}.html")
+    # HTMLファイルとして保存
+    os.makedirs(f"works/{embedding_model}/", exist_ok=True)
+    fig.write_html(f"works/{embedding_model}/{str(HORIZONTAL_AXIS)}-{str(VERTICAL_AXIS)}.html")
 
