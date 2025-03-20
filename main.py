@@ -89,7 +89,7 @@ if __name__ == "__main__":
 
     # collect_vtuber_info_from_gpt_search()
 
-    # sarashina_embedding.calc_embeddings(dataset_name="Atotti/VTuber-overview-split", split="キャラクター性")
+    sarashina_embedding.calc_embeddings(dataset_name="Atotti/VTuber-overview-split", split="キャラクター性")
     # sarashina_embedding.calc_embeddings(dataset_name="Atotti/VTuber-overview-split", split="活動内容")
     # sarashina_embedding.calc_embeddings(dataset_name="Atotti/VTuber-overview-split", split="コラボ履歴")
     # sarashina_embedding.calc_embeddings(dataset_name="Atotti/VTuber-overview-split", split="人間関係")
@@ -103,36 +103,36 @@ if __name__ == "__main__":
         HORIZONTAL_AXIS=1,
         VERTICAL_AXIS=2
         )
-    vtuber_plot(
-        embedding_dir="data/活動内容/sarashina_embedding",
-        HORIZONTAL_AXIS=1,
-        VERTICAL_AXIS=2
-        )
-    vtuber_plot(
-        embedding_dir="data/コラボ履歴/sarashina_embedding",
-        HORIZONTAL_AXIS=1,
-        VERTICAL_AXIS=2
-        )
-    vtuber_plot(
-        embedding_dir="data/人間関係/sarashina_embedding",
-        HORIZONTAL_AXIS=1,
-        VERTICAL_AXIS=2
-        )
-    vtuber_plot(
-        embedding_dir="data/コンテンツのジャンル/sarashina_embedding",
-        HORIZONTAL_AXIS=1,
-        VERTICAL_AXIS=2
-        )
-    vtuber_plot(
-        embedding_dir="data/活動スタイル/sarashina_embedding",
-        HORIZONTAL_AXIS=1,
-        VERTICAL_AXIS=2
-        )
-    vtuber_plot(
-        embedding_dir="data/他のVTuberと比較した時の特徴/sarashina_embedding",
-        HORIZONTAL_AXIS=1,
-        VERTICAL_AXIS=2
-        )
+    # vtuber_plot(
+    #     embedding_dir="data/活動内容/sarashina_embedding",
+    #     HORIZONTAL_AXIS=1,
+    #     VERTICAL_AXIS=2
+    #     )
+    # vtuber_plot(
+    #     embedding_dir="data/コラボ履歴/sarashina_embedding",
+    #     HORIZONTAL_AXIS=1,
+    #     VERTICAL_AXIS=2
+    #     )
+    # vtuber_plot(
+    #     embedding_dir="data/人間関係/sarashina_embedding",
+    #     HORIZONTAL_AXIS=1,
+    #     VERTICAL_AXIS=2
+    #     )
+    # vtuber_plot(
+    #     embedding_dir="data/コンテンツのジャンル/sarashina_embedding",
+    #     HORIZONTAL_AXIS=1,
+    #     VERTICAL_AXIS=2
+    #     )
+    # vtuber_plot(
+    #     embedding_dir="data/活動スタイル/sarashina_embedding",
+    #     HORIZONTAL_AXIS=1,
+    #     VERTICAL_AXIS=2
+    #     )
+    # vtuber_plot(
+    #     embedding_dir="data/他のVTuberと比較した時の特徴/sarashina_embedding",
+    #     HORIZONTAL_AXIS=1,
+    #     VERTICAL_AXIS=2
+    #     )
 
     # modernbert_ja_310m.calc_embeddings()
 
