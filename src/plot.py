@@ -6,7 +6,7 @@ from sklearn.decomposition import PCA
 from adjustText import adjust_text
 import pandas as pd
 import japanize_matplotlib
-from src import vtuber, utils
+from src import vtuber, utils, label_v
 
 HORIZONTAL_AXIS = 2
 VERTICAL_AXIS = 3
@@ -65,7 +65,7 @@ def plot_embeddings_with_pca(
         # ブランドIDがなければ "Unknown" とする
         brand = v.brand_id if v.brand_id else "Unknown"
         name_to_brand[sanitized_name] = brand
-        if v.subscribers > 1_000_000:
+        if v.name in label_v.label_v:
             text_label.add(sanitized_name)
 
     # 2. 埋め込みファイルの読み込み
