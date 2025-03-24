@@ -97,7 +97,11 @@ if __name__ == "__main__":
     # sarashina_embedding.calc_embeddings(dataset_name="Atotti/VTuber-overview-split", split="活動スタイル")
     # sarashina_embedding.calc_embeddings(dataset_name="Atotti/VTuber-overview-split", split="他のVTuberと比較した時の特徴")
 
-
+    vtuber_plot(
+        embedding_dir="data/sarashina_embedding",
+        HORIZONTAL_AXIS=1,
+        VERTICAL_AXIS=5
+        )
     vtuber_plot(
         embedding_dir="data/キャラクター性/sarashina_embedding",
         HORIZONTAL_AXIS=1,
