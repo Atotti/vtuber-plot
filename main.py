@@ -1,7 +1,7 @@
 import traceback
 import os
 
-from src import vtuber, utils, gpt_search, search_pixiv_dic, plot, plot_plotly
+from src import vtuber, utils, gpt_search, search_pixiv_dic, plot, plot_plotly, plot_plotly_tsne, plot_tsne
 
 from src.embedding import sarashina_embedding, modernbert_ja_310m, openai_embedding_3_large
 
@@ -66,12 +66,12 @@ def vtuber_plot(
         HORIZONTAL_AXIS=1,
         VERTICAL_AXIS=2
     ):
-    plot.plot_embeddings_with_pca(
+    plot_tsne.plot_embeddings_with_tsne(
         embedding_dir=embedding_dir,
         HORIZONTAL_AXIS=HORIZONTAL_AXIS,
         VERTICAL_AXIS=VERTICAL_AXIS
         )
-    plot_plotly.plot_embeddings_interactive(
+    plot_plotly_tsne.plot_embeddings_interactive_tsne(
         embedding_dir=embedding_dir,
         HORIZONTAL_AXIS=HORIZONTAL_AXIS,
         VERTICAL_AXIS=VERTICAL_AXIS
@@ -100,42 +100,42 @@ if __name__ == "__main__":
     vtuber_plot(
         embedding_dir="data/sarashina_embedding",
         HORIZONTAL_AXIS=1,
-        VERTICAL_AXIS=5
+        VERTICAL_AXIS=2
         )
     vtuber_plot(
         embedding_dir="data/キャラクター性/sarashina_embedding",
         HORIZONTAL_AXIS=1,
-        VERTICAL_AXIS=5
+        VERTICAL_AXIS=2
         )
     vtuber_plot(
         embedding_dir="data/活動内容/sarashina_embedding",
         HORIZONTAL_AXIS=1,
-        VERTICAL_AXIS=5
+        VERTICAL_AXIS=2
         )
     vtuber_plot(
         embedding_dir="data/コラボ履歴/sarashina_embedding",
         HORIZONTAL_AXIS=1,
-        VERTICAL_AXIS=5
+        VERTICAL_AXIS=2
         )
     vtuber_plot(
         embedding_dir="data/人間関係/sarashina_embedding",
         HORIZONTAL_AXIS=1,
-        VERTICAL_AXIS=5
+        VERTICAL_AXIS=2
         )
     vtuber_plot(
         embedding_dir="data/コンテンツのジャンル/sarashina_embedding",
         HORIZONTAL_AXIS=1,
-        VERTICAL_AXIS=5
+        VERTICAL_AXIS=2
         )
     vtuber_plot(
         embedding_dir="data/活動スタイル/sarashina_embedding",
         HORIZONTAL_AXIS=1,
-        VERTICAL_AXIS=5
+        VERTICAL_AXIS=2
         )
     vtuber_plot(
         embedding_dir="data/他のVTuberと比較した時の特徴/sarashina_embedding",
         HORIZONTAL_AXIS=1,
-        VERTICAL_AXIS=5
+        VERTICAL_AXIS=2
         )
 
     # modernbert_ja_310m.calc_embeddings()

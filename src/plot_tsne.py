@@ -48,7 +48,7 @@ color_map = {
 }
 
 
-def plot_embeddings_with_pca(
+def plot_embeddings_with_tsne(
     embedding_dir="data/sarashina_embedding",
     vtubers_json_path="data/filtered_vtubers.json",
     HORIZONTAL_AXIS=HORIZONTAL_AXIS,
