@@ -81,16 +81,16 @@ def plot_embeddings_interactive_tsne(
         {
             "name": names,
             "brand_id": brands,
-            f"PC{str(HORIZONTAL_AXIS)}": X_2d[:, HORIZONTAL_AXIS-1],
-            f"PC{str(VERTICAL_AXIS)}": X_2d[:, VERTICAL_AXIS-1],
+            f"dim{str(HORIZONTAL_AXIS)}": X_2d[:, HORIZONTAL_AXIS-1],
+            f"dim{str(VERTICAL_AXIS)}": X_2d[:, VERTICAL_AXIS-1],
         }
     )
 
     # 5. Plotly Expressでインタラクティブな散布図を作成
     fig = px.scatter(
         df,
-        x=f"PC{str(HORIZONTAL_AXIS)}",
-        y=f"PC{str(VERTICAL_AXIS)}",
+        x=f"dim{str(HORIZONTAL_AXIS)}",
+        y=f"dim{str(VERTICAL_AXIS)}",
         color="brand_id",
         color_discrete_map=color_map,
         hover_name="name",  # ホバー時に名前だけ表示

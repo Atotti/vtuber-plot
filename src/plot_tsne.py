@@ -116,8 +116,8 @@ def plot_embeddings_with_tsne(
     )
 
     plt.title(f"VTuber プロット ({embedding_model})")
-    plt.xlabel(f"PC{str(HORIZONTAL_AXIS)}")
-    plt.ylabel(f"PC{str(VERTICAL_AXIS)}")
+    plt.xlabel(f"dim{str(HORIZONTAL_AXIS)}")
+    plt.ylabel(f"dim{str(VERTICAL_AXIS)}")
 
     plt.legend(
         title="ブランド",
